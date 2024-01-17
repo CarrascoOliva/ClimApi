@@ -22,7 +22,7 @@ fetch("../JSON/provincias.json")
     const buscarLupa = document.getElementById("buscarLupa");
 
     opciones.innerHTML = ``;
-    let codigoSeleccionado; 
+    let codigoSeleccionado;
 
     searchInput.addEventListener("input", () => {
       const searchTerm = searchInput.value.trim().toLowerCase();
@@ -30,7 +30,7 @@ fetch("../JSON/provincias.json")
       const results = Object.entries(provincias).filter(([provinciaNombre]) =>
         provinciaNombre.toLowerCase().includes(searchTerm)
       );
-      
+
       opciones.innerHTML = ``;
 
       if (searchInput.value == ``) {
@@ -38,7 +38,7 @@ fetch("../JSON/provincias.json")
       } else {
         results.forEach(([provinciaNombre, codigo]) => {
           opciones.innerHTML += `<p>${provinciaNombre}</p>`; // cambia aquí como quieres que salgan las opciones en el buscador 
-          if(results.length===1){
+          if (results.length === 1) {
             codigoSeleccionado = codigo;
           }
         });
@@ -46,9 +46,9 @@ fetch("../JSON/provincias.json")
     });
 
     buscarLupa.addEventListener("click", () => {
-      if(codigoSeleccionado != null){
+      if (codigoSeleccionado != null) {
         window.location.href = `./PAGES/municipios.html?id=${codigoSeleccionado}`;
-      } 
+      }
     });
   });
 

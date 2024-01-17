@@ -67,6 +67,7 @@ async function indexDBInicicial() {
 
   for (let letra in grupos) {
     let divLetra = document.createElement("div");
+    divLetra.classList.add("letra-separadora");
     divLetra.innerHTML = `<h2>${letra}</h2>`;
     contenedor.appendChild(divLetra);
 
@@ -84,13 +85,13 @@ async function indexDBInicicial() {
       generarEventoLink(div.querySelector("button#detalles"), elemento.IDMun);
       generarFavoritoEvento(div.querySelector("button#favorito"), elemento);
       indexDBFav.getTownDB(elemento.IDMun)
-      .then((e)=>{
-        if (e){
-          div.querySelector("button#favorito").classList.add("btn-danger")
-          div.querySelector("button#favorito").classList.remove("btn-info")
-          
-        }
-      })
+        .then((e) => {
+          if (e) {
+            div.querySelector("button#favorito").classList.add("btn-danger")
+            div.querySelector("button#favorito").classList.remove("btn-info")
+
+          }
+        })
     });
   }
 }
@@ -103,13 +104,13 @@ function generarEventoLink(divElement, IDMun) {
     window.location.href = `../PAGES/municipioDetalles.html?id=${IDMun}`;
   });
 }
-function generarFavoritoEvento(element, Mun){
-  element.addEventListener("click", () =>{
-    if (element.classList.contains("btn-info")){
+function generarFavoritoEvento(element, Mun) {
+  element.addEventListener("click", () => {
+    if (element.classList.contains("btn-info")) {
       element.classList.remove("btn-info")
       element.classList.add("btn-danger")
       indexDBFav.addTownDB(Mun, Mun.IDMun);
-    }else{
+    } else {
       element.classList.add("btn-info")
       element.classList.remove("btn-danger")
       indexDBFav.deleteTownDB(Mun.IDMun);
