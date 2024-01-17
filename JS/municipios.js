@@ -105,13 +105,13 @@ function generarEventoLink(divElement, IDMun) {
 }
 function generarFavoritoEvento(element, Mun){
   element.addEventListener("click", () =>{
-    if (element.classList.contains("bg-info")){
-      element.classList.remove("bg-info")
-      element.classList.add("bg-danger")
+    if (element.classList.contains("btn-info")){
+      element.classList.remove("btn-info")
+      element.classList.add("btn-danger")
       indexDBFav.addTownDB(Mun, Mun.IDMun);
     }else{
-      element.classList.add("bg-info")
-      element.classList.remove("bg-danger")
+      element.classList.add("btn-info")
+      element.classList.remove("btn-danger")
       indexDBFav.deleteTownDB(Mun.IDMun);
     }
   })
