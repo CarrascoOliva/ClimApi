@@ -74,8 +74,9 @@ async function indexDBInicicial() {
       let div = document.createElement("div");
       div.id = elemento.IDMun;
       div.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "bg-white", "text-dark", "card");
-      div.innerHTML = `<div class="card-body" id="municipiosCarta">
-            <h5 class="card-title text-center ">${elemento.nombreMun}</h5>
+      div.style.height = '110px';
+      div.innerHTML = `<div class="card-body text-center" id="municipiosCarta">
+            <h5 class="card-title">${elemento.nombreMun}</h5>
             <button id="favorito" type="button" class="btn btn-info">Fav</button>
             <button id="detalles" type="button" class="btn btn-primary">Detalles</button>
         </div>`;
