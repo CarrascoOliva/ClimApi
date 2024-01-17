@@ -78,7 +78,7 @@ async function indexDBInicicial() {
       div.style.height = '110px';
       div.innerHTML = `<div class="card-body text-center" id="municipiosCarta">
             <h5 class="card-title">${elemento.nombreMun}</h5>
-            <button id="favorito" type="button" class="btn btn-info">Fav</button>
+            <button id="favorito" type="button" class="btn btn-info">Favorito</button>
             <button id="detalles" type="button" class="btn btn-primary">Detalles</button>
         </div>`;
       contenedor.appendChild(div);

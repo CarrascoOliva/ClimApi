@@ -37,7 +37,7 @@ fetch("./JSON/provincias.json")
         opciones.innerHTML = ``;
       } else {
         results.forEach(([provinciaNombre, codigo]) => {
-          opciones.innerHTML += `<p>${provinciaNombre}</p>`; // cambia aquí como quieres que salgan las opciones en el buscador 
+          opciones.innerHTML += `<p>${provinciaNombre}</p>`;
           if (results.length === 1) {
             codigoSeleccionado = codigo;
           }
